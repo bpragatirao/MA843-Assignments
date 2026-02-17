@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration | Compile Companion</title>
+    <style>
+        :root {
+            --primary: #6366f1;
+            --primary-hover: #4f46e5;
+            --bg-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --glass-bg: rgba(255, 255, 255, 0.95);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--bg-gradient);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .form-container {
+            background: var(--glass-bg);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            width: 100%;
+            max-width: 500px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #1f2937;
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #4b5563;
+            margin-bottom: 8px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e5e7eb;
+            border-radius: 10px;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease;
+            outline: none;
+        }
+
+        input:focus, select:focus {
+            border-color: var(--primary);
+        }
+
+        /* Radio & Checkbox Styling */
+        .options-group {
+            display: flex;
+            gap: 20px;
+            margin-top: 5px;
+        }
+
+        .option-item {
+            display: flex;
+            align-items: center;
+            font-size: 0.9rem;
+            color: #374151;
+            cursor: pointer;
+        }
+
+        .option-item input {
+            margin-right: 8px;
+            cursor: pointer;
+        }
+
+        /* Button Grouping */
+        .button-group {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        button {
+            flex: 2; /* Submit button takes more space */
+            padding: 14px;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        button[type="reset"] {
+            flex: 1; /* Reset button is smaller */
+            background-color: var(--reset-bg);
+            color: var(--reset-text);
+        }
+
+        button:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+
+        button[type="reset"]:hover {
+            background-color: #e5e7eb;
+            color: #111827;
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <h2>Student Portal</h2>
+    <form action="#">
+        
+        <div class="form-group">
+            <label for="fullname">Full Name</label>
+            <input type="text" id="fullname" placeholder="Enter your full name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" placeholder="student@university.edu" required>
+        </div>
+
+        <div class="form-group">
+            <label for="branch">Academic Branch</label>
+            <select id="branch">
+                <option value="" disabled selected>Select your branch</option>
+                <option value="cs">Computer Science</option>
+                <option value="it">Information Technology</option>
+                <option value="ece">Electronics & Communication</option>
+                <option value="me">Mechanical Engineering</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Gender</label>
+            <div class="options-group">
+                <label class="option-item">
+                    <input type="radio" name="gender" value="male"> Male
+                </label>
+                <label class="option-item">
+                    <input type="radio" name="gender" value="female"> Female
+                </label>
+                <label class="option-item">
+                    <input type="radio" name="gender" value="other"> Other
+                </label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Areas of Interest</label>
+            <div class="options-group">
+                <label class="option-item">
+                    <input type="checkbox" name="interest" value="ml"> ML/AI
+                </label>
+                <label class="option-item">
+                    <input type="checkbox" name="interest" value="web"> Web Dev
+                </label>
+                <label class="option-item">
+                    <input type="checkbox" name="interest" value="ds"> Data Science
+                </label>
+            </div>
+        </div>
+
+        <div class="button-group">
+            <button type="submit">Submit</button>
+            <button type="reset">Reset</button>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>
